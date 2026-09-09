@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TikTok Authorization — English With Flow</title>
+</head>
+<body>
+  <h1>TikTok Authorization</h1>
+  <p id="message">Processando autorização...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const error = params.get("error");
+
+    document.getElementById("message").textContent = error
+      ? "Authorization error: " + error
+      : code
+        ? "Authorization successful. You may return to English With Flow."
+        : "No authorization code was received.";
+  </script>
+</body>
+</html>
